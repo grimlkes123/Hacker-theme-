@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberBreach - Hacker Simulation</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/game.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <h1 class="glitch-text">INITIALIZING SYSTEM</h1>
+        <div class="progress-bar">
+            <div class="progress-fill"></div>
+        </div>
+        <div id="loading-text" class="hacker-text">Establishing connection...</div>
+    </div>
+
+    <!-- Main Game Elements -->
+    <div id="background"></div>
+    <div id="game-container">
+        <canvas id="gameCanvas"></canvas>
+        <div id="ui">
+            <div id="score">Score: 0</div>
+            <div id="health">Health: 100</div>
+            <div id="level">Level: 1</div>
+        </div>
+        
+        <!-- Game Overlays -->
+        <div id="game-over" class="overlay">
+            <h2 class="glitch-text">SYSTEM COMPROMISED</h2>
+            <p>Your connection has been terminated.</p>
+            <div class="final-score">Final Score: <span id="final-score">0</span></div>
+            <button id="restart-button" class="game-btn">REINITIALIZE</button>
+        </div>
+        
+        <div id="level-complete" class="overlay">
+            <h2>FIREWALL BYPASSED</h2>
+            <p>Security layer breached successfully.</p>
+            <button id="next-level-button" class="game-btn">PROCEED TO NEXT LEVEL</button>
+        </div>
+        
+        <div id="instructions" class="overlay active">
+            <h2>MISSION BRIEFING</h2>
+            <p>You are a hacker infiltrating a high-security network.</p>
+            <p>Collect data packets (green) while avoiding security protocols (red).</p>
+            <div class="controls-info">
+                <p>WASD or Arrow Keys - Move</p>
+                <p>Space - Deploy Counter-Measure</p>
+                <p>Shift - Activate Stealth Mode (limited use)</p>
+                <p>ESC - Pause</p>
+            </div>
+            <button id="start-button" class="game-btn">BEGIN INFILTRATION</button>
+        </div>
+        
+        <div id="pause-menu" class="overlay">
+            <h2>CONNECTION PAUSED</h2>
+            <button id="resume-button" class="game-btn">RESUME</button>
+            <button id="restart-from-pause" class="game-btn">RESTART</button>
+        </div>
+    </div>
+
+    <!-- Terminal Window -->
+    <div id="terminal-container" class="terminal-container">
+        <div class="terminal-header">
+            <span>terminal@cyberspace:~</span>
+            <div class="terminal-controls">
+                <span class="terminal-minimize">_</span>
+                <span class="terminal-maximize">□</span>
+                <span class="terminal-close">×</span>
+            </div>
+        </div>
+        <div class="terminal-output"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/background.js"></script>
+    <script src="js/game/engine.js"></script>
+    <script src="js/game/player.js"></script>
+    <script src="js/game/levels.js"></script>
+    <script src="js/game/enemies.js"></script>
+    <script src="js/effects/matrix.js"></script>
+    <script src="js/effects/glitch.js"></script>
+    <script src="js/effects/terminal.js"></script>
+    <script src="js/audio/synthesizer.js"></script>
+</body>
+</html>

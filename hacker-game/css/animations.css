@@ -1,0 +1,188 @@
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes glitch {
+    0% {
+        transform: translate(0);
+        text-shadow: 0 0 0 var(--primary-color);
+    }
+    2% {
+        transform: translate(-2px, 1px);
+        text-shadow: -1px -1px 0 #ff00de, 1px 1px 0 #00ffff;
+    }
+    3% {
+        transform: translate(2px, -1px);
+        text-shadow: 1px 1px 0 #ff00de, -1px -1px 0 #00ffff;
+    }
+    4% {
+        transform: translate(0);
+        text-shadow: none;
+    }
+    5% {
+        transform: translate(-2px, -1px);
+        text-shadow: -1px -1px 0 #ff00de, 1px 1px 0 #00ffff;
+    }
+    6% {
+        transform: translate(0);
+        text-shadow: none;
+    }
+    7% {
+        transform: translate(2px, 1px);
+        text-shadow: 1px 1px 0 #ff00de, -1px -1px 0 #00ffff;
+    }
+    8% {
+        transform: translate(0);
+        text-shadow: none;
+    }
+    100% {
+        transform: translate(0);
+        text-shadow: none;
+    }
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: var(--primary-color) }
+}
+
+@keyframes flicker {
+  0% { opacity: 0.8; }
+  5% { opacity: 0.5; }
+  10% { opacity: 0.9; }
+  15% { opacity: 0.7; }
+  20% { opacity: 1; }
+  25% { opacity: 0.6; }
+  30% { opacity: 0.8; }
+  35% { opacity: 1; }
+  40% { opacity: 0.4; }
+  45% { opacity: 0.9; }
+  50% { opacity: 1; }
+  55% { opacity: 0.7; }
+  60% { opacity: 0.6; }
+  65% { opacity: 0.9; }
+  70% { opacity: 0.8; }
+  75% { opacity: 1; }
+  80% { opacity: 0.7; }
+  85% { opacity: 0.9; }
+  90% { opacity: 0.8; }
+  95% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0.3;
+  }
+}
+
+.scanline {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: rgba(0, 255, 65, 0.3);
+  opacity: 0.3;
+  animation: scanline 8s linear infinite;
+  z-index: 999;
+}
+
+.glitch-text {
+  animation: glitch 5s infinite;
+}
+
+.flicker {
+  animation: flicker 2s infinite;
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 255, 65, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(0, 255, 65, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 255, 65, 0);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translate(0, 0) rotate(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translate(-5px, 0) rotate(-1deg); }
+  20%, 40%, 60%, 80% { transform: translate(5px, 0) rotate(1deg); }
+}
+
+.shake {
+  animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.background-animation {
+    animation: fadeIn 2s ease-in-out;
+}
+
+.glitch-effect {
+    animation: glitch 1s infinite;
+}
+
+.blink {
+    animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}

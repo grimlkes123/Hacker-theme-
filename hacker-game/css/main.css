@@ -1,0 +1,245 @@
+:root {
+  --primary-color: #00ff41;
+  --secondary-color: #0f0;
+  --accent-color: #ff00ff;
+  --background-color: #000;
+  --text-color: #00ff41;
+  --glow-effect: 0 0 10px var(--primary-color);
+  --terminal-font: 'Courier New', monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--terminal-font);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #00ff00;
+}
+
+a {
+  color: #00ff00;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.header {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.button {
+  background-color: #00ff00;
+  border: none;
+  color: #0d0d0d;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #00cc00;
+}
+
+.game-area {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.game-ui {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 10;
+}
+
+.hidden {
+  display: none;
+}
+
+#background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.hacker-text {
+  color: var(--primary-color);
+  text-shadow: var(--glow-effect);
+  font-family: var(--terminal-font);
+  white-space: nowrap;
+}
+
+.typing-effect {
+  overflow: hidden;
+  border-right: 0.15em solid var(--primary-color);
+  white-space: nowrap;
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+/* Loading screen */
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#loading-screen h1 {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-shadow: var(--glow-effect);
+}
+
+.progress-bar {
+  width: 60%;
+  height: 20px;
+  background-color: #111;
+  border: 1px solid var(--primary-color);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: var(--primary-color);
+  width: 0%;
+  transition: width 0.5s ease;
+}
+
+.terminal-container {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 400px;
+  height: 250px;
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  padding: 10px;
+  overflow-y: auto;
+  font-size: 0.8rem;
+  box-shadow: 0 0 15px var(--primary-color);
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+.terminal-container:hover {
+  opacity: 1;
+}
+
+.terminal-line {
+  margin-bottom: 5px;
+}
+
+.command {
+  color: var(--accent-color);
+}
+
+.response {
+  color: var(--secondary-color);
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.9);
+  border: 2px solid var(--primary-color);
+  padding: 20px;
+  z-index: 100;
+  box-shadow: 0 0 20px var(--primary-color);
+  max-width: 500px;
+  width: 80%;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  border-bottom: 1px solid var(--primary-color);
+  padding-bottom: 10px;
+}
+
+.modal-close {
+  color: var(--accent-color);
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.modal-body {
+  margin-bottom: 20px;
+}
+
+.modal-footer {
+  text-align: right;
+}
+
+.btn {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  padding: 8px 15px;
+  cursor: pointer;
+  font-family: var(--terminal-font);
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+}
